@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Minha Primeira Página</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Primeira Página</title>
+    <style>
+        .meu-botao {
+            background-color: #007bff;
+            color: rgb(248, 247, 246);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: #9cc8f8;
+        }
+        
+        h1 {
+            color: rgb(187, 101, 15);
+        }
+
+        p {
+            color: rgb(2, 172, 39);
+        }
+
+        .meu-botao:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
+
 <body>
-<h1>Olá, Mundo!</h1>
-<p>Este é o meu primeiro site.</p>
+    <h1>Olá, Mundo!</h1>
+
+    <button class="meu-botao" onclick="mostrarMensagem()">Clique Aqui</button>
+    <button class="meu-botao" onclick="mostrarMensagem()">Clique Aqui</button>
+    <button class="meu-botao" onclick="mostrarMensagem()">Clique Aqui</button>
+    <button class="meu-botao" onclick="mostrarMensagem()">Clique Aqui</button>
+    <button class="meu-botao" onclick="mostrarMensagem()">Clique Aqui</button>
+    <p>Este é o meu primeiro site.</p><br>
+
+
+    <h1>My First Heading</h1>
+    <p>My first paragraph.</p>
+
+    <p>Este é o meu primeiro site.</p><br>
 </body>
+<script>
+    function mostrarMensagem() {
+
+        alert("Olá, Mundo")
+    }
+</script>
+
 </html>
