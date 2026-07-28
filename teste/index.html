@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Primeira Página</title>
+    <style>
+        .meu-botao {
+            background-color: #007bff;
+            color: rgb(248, 247, 246);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: #f6fcdb;
+        }
+
+        h1 {
+            color: rgb(15, 61, 187);
+        }
+
+        p {
+            color: rgb(5, 0, 0);
+        }
+
+        .meu-botao:hover {
+            background-color: #0056b3;
+        }
+
+        /* Customização nativa do fundo escurecido */
+        dialog::backdrop {
+            background-color: rgba(2, 67, 187, 0.829);
+            backdrop-filter: blur(4px);
+        }
+
+        div::backdrop {
+            background-color: rgba(2, 67, 187, 0.829);
+            backdrop-filter: blur(4px);
+        }
+
+        .details {
+            background-color: #0056b3;
+
+        }
+
+        /* CSS básico para organizar o rodapé em colunas flexíveis */
+        .rodape-principal {
+            background-color: #0029af;
+            color: #ffffff;
+            padding: 40px 20px 20px;
+            font-family: sans-serif;
+        }
+
+        .rodape-conteudo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+
+        .rodape-coluna {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .rodape-coluna ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .rodape-coluna a {
+            color: #b3b3b3;
+            text-decoration: none;
+        }
+
+        .rodape-coluna a:hover {
+            color: #ffffff;
+        }
+
+        .rodape-inferior {
+            text-align: center;
+            border-top: 1px solid #333333;
+            margin-top: 30px;
+            padding-top: 20px;
+            color: #8c8c8c;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section id="funcionalidades" aria-labelledby="titulo-funcionalidades">
+            <!-- Toda section precisa de um título identificador -->
+            <h2 id="titulo-funcionalidades">Nossos Recursos Principais</h2>
+            <p>Conheça as vantagens de utilizar nossa plataforma para o seu negócio.</p>
+
+            <!-- Blocos de conteúdo interno da seção -->
+            <div class="cards-container">
+                <article class="card">
+                    <h3>Alta Velocidade</h3>
+                    <p>Páginas que carregam instantaneamente para melhorar a conversão.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Segurança Total</h3>
+                    <p>Seus dados protegidos com criptografia de ponta a ponta.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Suporte Nátivo</h3>
+                    <p>Componentes modernos que dispensam o uso de scripts pesados.</p>
+                </article>
+            </div>
+        </section>
+
+    </main>
+    <h1>Olá, Mundo!</h1>
+
+    <button class="meu-botao" onclick="mostrarMensagem()">Clique Aqui</button>
+    
+    <p>Este é o meu primeiro site.</p><br>
+    <p><strong>Atenção:</strong> O prazo para inscrição termina hoje às 23:59.</p>
+    <p>Para sua segurança, <strong>nunca compartilhe sua senha</strong> com terceiros.</p>
+
+
+    <h1>My First Heading</h1>
+    <p>My first paragraph.</p>
+
+    <p>Este é o meu primeiro site.</p><br>
+    <!-- Botão para abrir o modal -->
+    <button onclick="document.getElementById('meu-modal').showModal()">
+        Abrir Modal
+    </button>
+
+    <!-- Estrutura do Modal -->
+    <dialog id="meu-modal">
+        <h3>Título do Modal</h3>
+        <p>Este modal controla o foco e fecha com a tecla ESC nativamente!</p>
+
+        <!-- Formulário com method="dialog" fecha o modal automaticamente ao enviar -->
+        <form method="dialog">
+            <button>Fechar</button>
+        </form>
+    </dialog>
+
+    <button popovertarget="meu-menu">Abrir Menu Flutuante</button>
+
+    <!-- O elemento com o atributo popover começa escondido automaticamente -->
+    <div id="meu-menu" popover>
+        <h4>Opções</h4>
+        <ul>
+            <li><a href="#perfil">Meu Perfil</a></li>
+            <li><a href="#config">Configurações</a></li>
+        </ul>
+    </div>
+    <details class="details">
+        <summary>Como funciona o suporte nativo?</summary>
+        <p>O navegador gerencia a abertura e o fechamento do bloco de texto automaticamente.</p>
+    </details>
+
+    <details>
+        <summary>Preciso de CSS para esconder o texto?</summary>
+        <p>Não. O conteúdo dentro de details fica oculto por padrão até o clique no summary.</p>
+    </details>
+
+    <label for="tecnologia">Escolha uma linguagem:</label>
+    <!-- O atributo list conecta o input ao id da datalist -->
+    <input type="text" id="tecnologia" list="linguagens-disponiveis" placeholder="Digite para filtrar...">
+
+    <datalist id="linguagens-disponiveis">
+        <option value="HTML5"></option>
+        <option value="CSS3"></option>
+        <option value="JavaScript"></option>
+        <option value="Python"></option>
+        <option value="TypeScript"></option>
+    </datalist>
+
+    <footer class="rodape-principal">
+        <div class="rodape-conteudo">
+
+            <!-- Coluna 1: Informações da Empresa -->
+            <div class="rodape-coluna">
+                <h3>MinhaEmpresa</h3>
+                <p>Criando soluções modernas e nativas para a web desde 2026.</p>
+            </div>
+
+            <!-- Coluna 2: Links Rápidos de Navegação -->
+            <nav class="rodape-coluna" aria-label="Navegação do rodapé">
+                <h4>Links Úteis</h4>
+                <ul>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+
+            <!-- Coluna 3: Aspectos Legais -->
+            <nav class="rodape-coluna" aria-label="Links legais">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="/privacidade">Política de Privacidade</a></li>
+                    <li><a href="/termos">Termos de Uso</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <!-- Barra Inferior: Direitos Autorais -->
+        <div class="rodape-inferior">
+            <p>&copy; 2026 MinhaEmpresa. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+<script>
+    function mostrarMensagem() {
+
+        alert("Olá, Mundo")
+    }
+</script>
+
+</html>
