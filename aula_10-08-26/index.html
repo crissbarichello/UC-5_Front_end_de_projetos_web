@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cristec Tecnologia</title>
+    <style>
+        #div1,
+        #div2 {
+            float: left;
+            width: 100px;
+            height: 35px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        function dragstartHandler(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function dragoverHandler(ev) {
+            ev.preventDefault();
+        }
+
+        function dropHandler(ev) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</head>
+
+<body style="display: flex; flex-direction:column; min-height: 100vh;  align-items:center;">
+    <header>
+        <h1><span style='font-size:100px;'>&#128187;</span>Cristec Tecnologia</h1>
+    </header>
+    <nav id="menu-principal" aria-label="Menu de navegação principal">
+        <ul>
+            <li><a href="#menu-principal">Home</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="#sobre-nos">Sobre Nós</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Bem-vindo à Cristec </h1>
+        <p>Somos uma empresa dedicada a fornecer soluções tecnológicas inovadoras para o seu negócio.</p>
+        <p>Conheça as vantagens de utilizar nossa plataforma para o seu negócio.</p>
+    </main>
+    <section id="servicos" aria-labelledby="titulo-servicos">
+        <h2 id="titulo-servicos">&#128204; Nossos Recursos Principais</h2>
+        <div class="cards-container">
+            <article class="card">
+                <h3>Alta Velocidade</h3>
+                <p>Páginas que carregam instantaneamente para melhorar a conversão.</p>
+            </article>
+
+            <article class="card">
+                <h3>Segurança Total</h3>
+                <p>Seus dados protegidos com criptografia de ponta a ponta.</p>
+            </article>
+
+            <article class="card">
+                <h3>Suporte Nátivo</h3>
+                <p>Componentes modernos que dispensam o uso de scripts pesados.</p>
+            </article>
+        </div>
+    </section>
+    <section id="depoimentos" aria-labelledby="titulo-depoimentos">
+        <div id="container">
+            <h2 id="titulo-depoimentos"> &#128221;Depoimentos de Clientes</h2>
+            <div class="depoimento">
+                <p>"A Cristec transformou nosso negócio com soluções inovadoras!"</p>
+                <p>- João Silva, CEO da Empresa X</p>
+            </div>
+            <div class="depoimento">
+                <p>"O suporte da Cristec é excepcional, sempre prontos para ajudar."</p>
+                <span>- Maria Oliveira, Gerente de TI da Empresa Y</span>
+            </div>
+        </div>
+    </section>
+    <section id="aside" aria-labelledby="titulo-aside">
+        <h2 id="titulo-aside">Informações Adicionais</h2>
+        <details>
+            <summary><span style='font-size:20px;'>&#128163;</span>Não Assistir</summary>
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/TKmllByzCtU?si=hcXx_oujJzTgRUje?autoplay=1&mute=1"
+                title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </details>
+        <details id="contato" aria-labelledby="titulo-contato">
+            <summary>Entre em Contato</summary>
+            <iframe src="contato.html" width="720" height="400" title="Formulário de Contato"></iframe>
+        </details>
+    </section>
+    <section id="sobre-nos" aria-labelledby="titulo-sobre-nos">
+        <h2 id="titulo-sobre-nos">&#128209; Sobre Nós</h2>
+        <p>Somos uma empresa dedicada a fornecer soluções tecnológicas inovadoras para o seu negócio.</p>
+        <div id="div1" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+            <img id="img1" src="https://cdn.aptoide.com/imgs/7/2/3/723fb9d5cf9818d3069652a3e26991c8_icon.png" draggable="true" ondragstart="dragstartHandler(event)" width="88"
+                height="31">
+        </div>
+
+        <div id="div2" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Cristec Tecnologia. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
