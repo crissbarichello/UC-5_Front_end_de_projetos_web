@@ -15,6 +15,20 @@
             padding: 10px;
             border: 1px solid black;
         }
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            min-height: 200vh;
+            display: flex;
+            flex-direction: column;
+            /* animation: girarInfinito 1s linear infinite; */
+            transform-origin: center center;
+        }
+ 
+        @keyframes girarInfinito {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
     </style>
     <script>
         function dragstartHandler(ev) {
@@ -86,7 +100,7 @@
         <h2 id="titulo-aside">Informações Adicionais</h2>
         <details>
             <summary><span style='font-size:20px;'>&#128163;</span>Não Assistir</summary>
-            <iframe width="560" height="315"
+            <iframe width="720" height="315"
                 src="https://www.youtube.com/embed/TKmllByzCtU?si=hcXx_oujJzTgRUje?autoplay=1&mute=1"
                 title="YouTube video player" frameborder="0" allowfullscreen></iframe>
         </details>
@@ -94,6 +108,11 @@
             <summary>Entre em Contato</summary>
             <iframe src="contato.html" width="720" height="400" title="Formulário de Contato"></iframe>
         </details>
+        <details id="local" aria-labelledby="titulo-contato">
+            <summary>Onde estamos</summary>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4398.554575387359!2d-53.50577822379124!3d-26.732052776755424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94fa5c6c10cf782f%3A0xc7a2281490e206a6!2sR.%20Rond%C3%B4nia%2C%20375%20-%20Andreatta%2C%20S%C3%A3o%20Miguel%20do%20Oeste%20-%20SC%2C%2089900-000!5e1!3m2!1spt-BR!2sbr!4v1787006930951!5m2!1spt-BR!2sbr" width="720" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </details>
+        
     </section>
     <section id="sobre-nos" aria-labelledby="titulo-sobre-nos">
         <h2 id="titulo-sobre-nos">&#128209; Sobre Nós</h2>

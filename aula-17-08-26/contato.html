@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhe Conosco</title>
+
+     <script>
+
+        function confirmarInscricao(event) {
+
+            event.preventDefault();
+
+            nome = document.getElementById("nome").value;
+
+            alert(`✅ ${nome}, inscrição realizada com sucesso!`);
+
+            // Redireciona para a página inicial
+
+            window.location.href = "academia.html";
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Contato</h1>
+    <p>Trabalhe conosco:</p>
+
+    <form onsubmit="confirmarInscricao(event)" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="mensagem">Mensagem:</label><br>
+        <textarea id="mensagem" name="mensagem" rows="5" cols="30" required></textarea><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+    
+</body>
+</html>

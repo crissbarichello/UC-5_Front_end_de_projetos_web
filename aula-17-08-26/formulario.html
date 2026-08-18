@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Inscrição</title>
+
+    <script>
+
+        function confirmarInscricao(event) {
+
+            event.preventDefault();
+
+            nome = document.getElementById("nome").value;
+
+            alert(`✅ ${nome}, inscrição realizada com sucesso!`);
+
+            // Redireciona para a página inicial
+
+            window.location.href = "academia.html";
+
+        }
+
+        function previewFoto(event) {
+
+            const reader = new FileReader();
+
+            reader.onload = function () {
+
+                const preview = document.getElementById("preview");
+
+                preview.src = reader.result;
+
+                preview.style.display = "block";
+
+            };
+
+            reader.readAsDataURL(event.target.files[0]);
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <main>
+        <section id="anuncio">
+            <h2>Página inicial</h2>
+            <a href="academia.html"
+                style="display:inline-block; background:#ff7a00; color:#fff; text-decoration:none; padding:14px 28px; border-radius:8px; font-weight:bold; margin-top:8px;">Voltar</a>
+        </section>
+        <section id="formulario">
+            <h2>Formulário de Inscrição na Academia</h2>
+            <form onsubmit="confirmarInscricao(event)" method="post">
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome" required><br>
+
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" name="email" placeholder="seuemail@email.com" required><br>
+
+                <label for="telefone">Telefone:</label><br>
+                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000"><br>
+
+                <label for="data_nascimento">Data de Nascimento:</label><br>
+                <input type="date" id="data_nascimento" name="data_nascimento" required><br>
+
+                <label for="assunto">Assunto:</label><br>
+                <select id="assunto" name="assunto" required>
+                    <option value="" selected disabled>Selecione uma opção</option>
+                    <option value="matricula">Matrícula</option>
+                    <option value="planos">Planos e mensalidades</option>
+                    <option value="aulas">Aulas e horários</option>
+                    <option value="personal">Treinamento personalizado</option>
+                </select><br>
+
+                <label for="mensagem">Mensagem:</label><br>
+                <textarea id="mensagem" name="mensagem" rows="5"
+                    placeholder="Descreva sua dúvida ou objetivo"></textarea><br>
+
+                <fieldset>
+                    <legend>Qual modalidade você deseja?</legend>
+                    <label>
+                        <input type="radio" name="modalidade" value="musculacao" checked> Musculação
+                    </label>
+                    <label>
+                        <input type="radio" name="modalidade" value="spinning"> Spinning
+                    </label>
+                    <label>
+                        <input type="radio" name="modalidade" value="crossfit"> CrossFit
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Interesses</legend>
+                    <label>
+                        <input type="checkbox" name="interesses" value="personal"> Treinamento personalizado
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interesses" value="aulas_coletivas"> Aulas coletivas
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interesses" value="suplementos"> Suplementação
+                    </label>
+                </fieldset>
+
+                <input type="file" name="fotos" accept="image/*" required onchange="previewFoto(event)"><br>
+
+                <br><br>
+                <img id="preview" width="150" style="display:none;border-radius:8px;">
+
+                <br><br>
+                <hr>
+
+                <button type="submit">Enviar inscrição</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
