@@ -8,13 +8,51 @@
 
     <script>
 
-        function confirmarInscricao(event) {
+        async function confirmarInscricao(event) {
 
             event.preventDefault();
 
-            nome = document.getElementById("nome").value;
+            
 
-            alert(`✅ ${nome}, inscrição realizada com sucesso!`);
+            const nome = document.getElementById("nome").value;
+            const email = document.getElementById("email").value;
+            const telefone = document.getElementById("telefone").value;
+            const data_nascimento = document.getElementById("data_nascimento").value;
+            const assunto = document.getElementById("assunto").value;
+            const mensagem = document.getElementById("mensagem").value;
+            const modalidade = document.querySelector('input[name="modalidade"]:checked').value;
+            const interesses = Array.from(document.querySelectorAll('input[name="interesses"]:checked')).map(checkbox => checkbox.value);
+            const image = document.getElementById("image").files[0];
+
+            try {
+                const response = await fetch(
+                    "http://localhost:5000/inscricao",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            nome,
+                            email,
+                            telefone,
+                            data_nascimento,
+                            assunto,
+                            mensagem,
+                            modalidade,
+                            interesses,
+                            nomeArquivo
+                        })
+                    }
+                );
+                await uploadImagem();
+
+                alert(`✅ ${nome}, inscrição realizada com sucesso!`);
+
+            } catch (erro) {
+                console.error(erro);
+                alert("Erro ao realizar a inscrição.");
+            }
 
             // Redireciona para a página inicial
 
@@ -40,6 +78,36 @@
 
         }
 
+        async function uploadImagem() {
+            const arquivo = document.getElementById("image").files[0];
+
+            if (!arquivo) {
+                alert("Selecione uma imagem.");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("imagem", arquivo);
+
+            try {
+                const response = await fetch(
+                    "http://localhost:5000/upload",
+                    {
+                        method: "POST",
+                        body: formData
+                    }
+                );
+
+                const resultado = await response.json();
+
+                console.log(resultado);
+                alert("Upload realizado com sucesso!");
+            } catch (erro) {
+                console.error(erro);
+                alert("Erro ao enviar a imagem.");
+            }
+        }
+
     </script>
 
 </head>
@@ -55,19 +123,19 @@
             <h2>Formulário de Inscrição na Academia</h2>
             <form onsubmit="confirmarInscricao(event)" method="post">
                 <label for="nome">Nome:</label><br>
-                <input type="text" id="nome" name="nome" placeholder="Seu nome" required><br>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome"><br>
 
                 <label for="email">E-mail:</label><br>
-                <input type="email" id="email" name="email" placeholder="seuemail@email.com" required><br>
+                <input type="email" id="email" name="email" placeholder="seuemail@email.com"><br>
 
                 <label for="telefone">Telefone:</label><br>
                 <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000"><br>
 
                 <label for="data_nascimento">Data de Nascimento:</label><br>
-                <input type="date" id="data_nascimento" name="data_nascimento" required><br>
+                <input type="date" id="data_nascimento" name="data_nascimento"><br>
 
                 <label for="assunto">Assunto:</label><br>
-                <select id="assunto" name="assunto" required>
+                <select id="assunto" name="assunto">
                     <option value="" selected disabled>Selecione uma opção</option>
                     <option value="matricula">Matrícula</option>
                     <option value="planos">Planos e mensalidades</option>
@@ -105,11 +173,11 @@
                     </label>
                 </fieldset>
 
-                <input type="file" name="fotos" accept="image/*" required onchange="previewFoto(event)"><br>
+                <input type="file" id="image" name="fotos" accept="image/*" required onchange="previewFoto(event)"><br>
 
                 <br><br>
                 <img id="preview" width="150" style="display:none;border-radius:8px;">
-
+                <button onclick="uploadImagem()">Enviar</button>
                 <br><br>
                 <hr>
 
