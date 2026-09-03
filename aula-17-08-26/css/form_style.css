@@ -1,0 +1,217 @@
+/* Reset e base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 30%, #16213e 50%, #0f3460 70%, #1a1a2e 100%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+main {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+section {
+    background: rgba(0, 0, 0, 0.75);
+    border: 2px solid #222;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+section h2 {
+    color: #ff7a00;
+    font-size: 1.8rem;
+    border-left: 5px solid #ff7a00;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+/* Link voltar — sobrescreve estilo inline */
+a[href="academia.html"] {
+    display: inline-block !important;
+    background: transparent !important;
+    color: #ff7a00 !important;
+    text-decoration: none !important;
+    padding: 0.5rem 1.2rem !important;
+    border: 2px solid #ff7a00 !important;
+    border-radius: 30px !important;
+    font-weight: bold !important;
+    transition: 0.3s;
+}
+
+a[href="academia.html"]:hover {
+    background: #ff7a00 !important;
+    color: #000 !important;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    font-weight: 600;
+    color: #ddd;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: #1a1a2e;
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #ff7a00;
+    box-shadow: 0 0 10px rgba(255, 122, 0, 0.4);
+}
+
+select option {
+    background: #1a1a2e;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #666;
+}
+
+fieldset {
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+legend {
+    color: #ff7a00;
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+fieldset label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+    padding: 0.3rem 0;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    accent-color: #ff7a00;
+    transform: scale(1.2);
+}
+
+/* Input file */
+input[type="file"] {
+    background: transparent;
+    border: 2px dashed #555;
+    padding: 1rem;
+    color: #aaa;
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+    background: #ff7a00;
+    color: #000;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: #e66b00;
+}
+
+/* Preview da imagem */
+#preview {
+    border: 4px solid #ff7a00;
+    box-shadow: 0 0 15px rgba(255, 122, 0, 0.3);
+    width: 150px;
+    height: auto;
+}
+
+/* Botões */
+button {
+    padding: 0.8rem 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+button[type="submit"] {
+    background: linear-gradient(135deg, #ff7a00, #cc5c00);
+    color: #000;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(255, 122, 0, 0.3);
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 122, 0, 0.5);
+}
+
+/* Botão de upload (primeiro botão) */
+button:not([type="submit"]) {
+    background: #333;
+    color: #ff7a00;
+    border: 2px solid #ff7a00;
+}
+
+button:not([type="submit"]):hover {
+    background: #ff7a00;
+    color: #000;
+}
+
+hr {
+    border: 1px solid #333;
+    margin: 0.5rem 0;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+
+    section {
+        padding: 1.2rem;
+    }
+
+    section h2 {
+        font-size: 1.4rem;
+    }
+}
