@@ -186,19 +186,59 @@ video {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
 }
 
-/* Depoimentos: estilo especial para os blocos */
-blockquote {
-    background: #111;
-    /* fundo escuro sólido */
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    border-left: 5px solid #ff7a00;
-    border-radius: 5px;
-    font-style: italic;
-    color: #ddd;
-    font-size: 1.1rem;
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8);
+/* Seção */
+#depoimentos {
+    padding: 60px 20px;
+    text-align: center;
 }
+
+#depoimentos h2 {
+    color: #ff7a00;
+    margin-bottom: 10px;
+}
+
+#depoimentos > p {
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+/* Grid de cards */
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* Card */
+.depoimento-card {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 122, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+    transition: all .3s ease;
+    text-align: left;
+}
+
+.depoimento-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,.35);
+    border-color: #ff7a00;
+}
+
+.depoimento-card p {
+    color: #f5f5f5;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.depoimento-card span {
+    color: #ff7a00;
+    font-weight: bold;
+    display: block;
+}
+
 
 /* Footer: escuro e centralizado */
 footer {
