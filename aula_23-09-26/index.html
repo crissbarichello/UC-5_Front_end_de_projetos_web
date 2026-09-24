@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de estudos">
+    <title>Estudos</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .whats_card {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: inline-flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .whats,.linkdin ,.goku {
+            margin-left: 10px;
+            border-radius: 10%;
+            background-color: none;
+            padding: 1px;
+            /* offset-x | offset-y | blur-radius | spread-radius | color */
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>Minha página de estudos</h1>
+        <nav aria-label="Navegação principal">
+            <a href="#resumo">Resumo</a>
+            <a href="#anotacoes">Anotações</a>
+            <a href="#exercicios">Exercícios</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="resumo">
+            <h2>Resumo do conteúdo</h2>
+            <p>Escreva aqui o resumo do tema estudado.</p>
+        </section>
+
+        <section id="anotacoes">
+            <h2>Anotações</h2>
+            <ul>
+                <li>Adicione uma anotação importante.</li>
+                <li>Registre conceitos e exemplos.</li>
+            </ul>
+        </section>
+
+        <section id="exercicios">
+            <h2>Exercícios</h2>
+            <ol>
+                <li>Descreva o que você aprendeu.</li>
+                <li>Pratique o conteúdo com um exemplo.</li>
+            </ol>
+        </section>
+        <div class="whats_card">
+            <div class="whats">
+                <a href="https://wa.me/+5549991563334" target="_blank">
+                    <img src="media/whatsapp.png" height="90" width="90" alt="Ícone do WhatsApp">
+                </a>
+            </div>
+
+            <div class="linkdin">
+                <a href="https://wa.me/+5549991563334" target="_blank">
+                    <img src="media/linkedin.png" height="90" width="90" alt="Ícone do LinkedIn">
+                </a>
+            </div>
+            <div class="goku">
+                <a href="https://meusanimes.blog/a/dragon-ball-z/" target="_blank">
+                    <img src="media/goku.png" height="90" width="90" alt="Ícone de Goku">
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Material de estudos</p>
+    </footer>
+</body>
+
+</html>

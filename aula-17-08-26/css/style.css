@@ -186,6 +186,16 @@ video {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
 }
 
+#estrutura img {
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 100px 100px 100px 100px;
+}
+
 /* Seção */
 #depoimentos {
     padding: 60px 20px;
@@ -237,6 +247,25 @@ video {
     color: #ff7a00;
     font-weight: bold;
     display: block;
+}
+
+.whats {
+    width: 80px;
+    height: 80px;
+    position:fixed;
+    bottom: 10px;
+    right: 10px;
+    border-radius: none;
+    border: none;
+    background: none;
+    z-index: 1000;
+    display: inline-block;
+}
+.whats_card {
+    display: inline-block;
+    width: 100%;
+    height: 400px;
+    
 }
 
 
